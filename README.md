@@ -57,12 +57,15 @@ lavogan-landing/
 ├── package.json
 ├── vite.config.js
 └── README.md
+```
 
 Blade Template
 
 Project menggunakan Blade sebagai templating engine Laravel.
 
+```
 app.blade.php
+```
 
 File ini digunakan sebagai layout atau template utama halaman.
 
@@ -73,11 +76,14 @@ Navigation
 CSS dan JavaScript
 Struktur dasar halaman
 Footer
+
+```
 home.blade.php
+```
 
 File ini merupakan child view yang menggunakan app.blade.php sebagai layout.
 
-Isi home.blade.php berfokus pada konten landing page seperti:
+Isi ```home.blade.php``` berfokus pada konten landing page seperti:
 
 Hero
 Tentang Sisfo Lavogan
@@ -96,9 +102,11 @@ routes/web.php
 
 Route utama saat ini:
 
+```
 Route::get('/', function () {
     return view('home');
 });
+```
 
 Route tersebut akan menampilkan home.blade.php ketika pengguna mengakses halaman utama aplikasi.
 
@@ -108,8 +116,10 @@ Asset frontend dikelola menggunakan Vite.
 
 File utama:
 
+```
 resources/css/app.css
 resources/js/app.js
+```
 
 CSS digunakan untuk mengatur tampilan dan responsive layout, sedangkan JavaScript digunakan untuk kebutuhan interaksi pada sisi frontend.
 
@@ -125,26 +135,34 @@ Node.js
 NPM
 
 Cek versi dengan:
-
+```
 php --version
 composer --version
 node --version
 npm --version
+```
+
 Installation
 1. Clone Repository
 
 Clone repository ke komputer:
 
+```
 git clone https://github.com/hafizsyawaldi/lavogan-landing.git
+```
 
 Masuk ke direktori project:
-
+```
 cd lavogan-landing
+```
+
 2. Install PHP Dependencies
 
 Install dependency Laravel menggunakan Composer:
 
+```
 composer install
+```
 
 Perintah ini akan membaca composer.json dan meng-install dependency yang dibutuhkan ke dalam folder vendor/.
 
@@ -152,16 +170,23 @@ Perintah ini akan membaca composer.json dan meng-install dependency yang dibutuh
 
 Buat file .env berdasarkan .env.example:
 
+```
 cp .env.example .env
+```
 
 Generate application key:
 
+```
 php artisan key:generate
+```
+
 4. Install Frontend Dependencies
 
 Install dependency frontend:
 
+```
 npm install
+```
 
 Perintah ini akan membuat folder node_modules/ berdasarkan dependency yang tercantum pada package.json.
 
@@ -169,7 +194,9 @@ Perintah ini akan membuat folder node_modules/ berdasarkan dependency yang terca
 
 Jalankan Laravel:
 
+```
 php artisan serve
+```
 
 Secara default aplikasi dapat diakses melalui:
 
@@ -177,16 +204,21 @@ http://127.0.0.1:8000
 
 Untuk development frontend, jalankan Vite pada terminal lain:
 
+```
 npm run dev
+```
 Development Workflow
 
 Saat melakukan development, biasanya diperlukan dua terminal.
 
 Terminal 1 — Laravel
+```
 php artisan serve
+```
 Terminal 2 — Vite
+```
 npm run dev
-
+```
 Laravel digunakan untuk menjalankan aplikasi backend dan routing, sedangkan Vite digunakan untuk memproses asset frontend seperti CSS dan JavaScript.
 
 Database
