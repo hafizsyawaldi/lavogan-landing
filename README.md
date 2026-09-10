@@ -59,7 +59,7 @@ lavogan-landing/
 └── README.md
 ```
 
-Blade Template
+## Blade Template
 
 Project menggunakan Blade sebagai templating engine Laravel.
 
@@ -94,7 +94,7 @@ Call to Action
 
 Dengan konsep Blade inheritance, bagian yang bersifat umum dapat ditempatkan di layout, sedangkan konten spesifik halaman ditempatkan di child view.
 
-Routing
+## Routing
 
 Routing halaman utama didefinisikan pada:
 
@@ -110,7 +110,7 @@ Route::get('/', function () {
 
 Route tersebut akan menampilkan home.blade.php ketika pengguna mengakses halaman utama aplikasi.
 
-Frontend Assets
+## Frontend Assets
 
 Asset frontend dikelola menggunakan Vite.
 
@@ -125,7 +125,7 @@ CSS digunakan untuk mengatur tampilan dan responsive layout, sedangkan JavaScrip
 
 Vite digunakan untuk memproses dan menyediakan asset frontend selama proses development.
 
-Requirements
+## Requirements
 
 Sebelum menjalankan project, pastikan perangkat sudah memiliki:
 
@@ -142,8 +142,8 @@ node --version
 npm --version
 ```
 
-Installation
-1. Clone Repository
+## Installation
+## 1. Clone Repository
 
 Clone repository ke komputer:
 
@@ -156,7 +156,7 @@ Masuk ke direktori project:
 cd lavogan-landing
 ```
 
-2. Install PHP Dependencies
+## 2. Install PHP Dependencies
 
 Install dependency Laravel menggunakan Composer:
 
@@ -166,7 +166,7 @@ composer install
 
 Perintah ini akan membaca composer.json dan meng-install dependency yang dibutuhkan ke dalam folder vendor/.
 
-3. Setup Environment
+## 3. Setup Environment
 
 Buat file .env berdasarkan .env.example:
 
@@ -180,7 +180,7 @@ Generate application key:
 php artisan key:generate
 ```
 
-4. Install Frontend Dependencies
+## 4. Install Frontend Dependencies
 
 Install dependency frontend:
 
@@ -190,7 +190,7 @@ npm install
 
 Perintah ini akan membuat folder node_modules/ berdasarkan dependency yang tercantum pada package.json.
 
-5. Jalankan Development Server
+## 5. Jalankan Development Server
 
 Jalankan Laravel:
 
@@ -207,27 +207,27 @@ Untuk development frontend, jalankan Vite pada terminal lain:
 ```
 npm run dev
 ```
-Development Workflow
+## Development Workflow
 
 Saat melakukan development, biasanya diperlukan dua terminal.
 
-Terminal 1 — Laravel
+### Terminal 1 — Laravel
 ```
 php artisan serve
 ```
-Terminal 2 — Vite
+### Terminal 2 — Vite
 ```
 npm run dev
 ```
 Laravel digunakan untuk menjalankan aplikasi backend dan routing, sedangkan Vite digunakan untuk memproses asset frontend seperti CSS dan JavaScript.
 
-Database
+## Database
 
 Pada tahap pengembangan UI saat ini, landing page belum melakukan integrasi dengan database untuk mengambil data dinamis.
 
 Database dan integrasi data akan dikembangkan pada tahap berikutnya sesuai kebutuhan sistem.
 
-API Integration
+## API Integration
 
 Landing page saat ini masih menggunakan data statis untuk kebutuhan desain dan validasi UI.
 
@@ -239,7 +239,8 @@ Pengambilan data statistik dari API
 Pengambilan informasi program
 Pengambilan data berita
 Integrasi dengan sistem utama Sisfo Lavogan
-Responsive Design
+
+## Responsive Design
 
 Landing page dirancang agar dapat digunakan pada berbagai ukuran layar, termasuk:
 
@@ -249,28 +250,28 @@ Mobile
 
 Responsive layout diterapkan menggunakan CSS dan media queries.
 
-Project Status
+## Project Status
 
 Project saat ini berada pada tahap:
 
-UI / Frontend Development
+### UI / Frontend Development
 
 Fokus pengembangan:
 
- Setup Laravel
- Setup Blade
- Setup routing
- Setup Vite
- Landing page layout
- Responsive navigation
- Hero section
- Informasi Sisfo Lavogan
- Fitur utama
- Statistik
- Program
- Call to Action
- Footer
- Integrasi API
- Integrasi database
- Data dinamis
- Integrasi dengan sistem utama
+- [x] Setup Laravel
+- [x] Setup Blade
+- [x] Setup routing
+- [x] Setup Vite
+- [x] Landing page layout
+- [x] Responsive navigation
+- [x] Hero section
+- [x] Informasi Sisfo Lavogan
+- [x] Fitur utama
+- [x] Statistik
+- [x] Program
+- [x] Call to Action
+- [x] Footer
+- [ ] Integrasi API
+- [ ] Integrasi database
+- [ ] Data dinamis
+- [ ] Integrasi dengan sistem utama
