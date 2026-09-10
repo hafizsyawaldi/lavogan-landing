@@ -1,66 +1,244 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Sisfo Lavogan Landing Page
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Landing page untuk Sistem Informasi Lavogan (Sisfo Lavogan), sebuah platform internal yang digunakan untuk mendukung pengelolaan informasi dan pelaksanaan program pelatihan vokasi.
 
-## About Laravel
+Project ini dibuat menggunakan Laravel dan difokuskan terlebih dahulu pada rancangan serta implementasi User Interface (UI) landing page sebelum masuk ke tahap integrasi data dan fitur lainnya.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Tech Stack
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- PHP 8.3+
+- Laravel 11
+- Blade
+- CSS
+- JavaScript
+- Vite
+- Node.js
+- Composer
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Fitur Saat Ini
 
-## Learning Laravel
+Landing page saat ini berisi beberapa bagian utama:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- Navigation bar
+- Hero section
+- Tentang Sisfo Lavogan
+- Fitur utama sistem
+- Statistik dan informasi umum
+- Program Lavogan
+- Call to Action untuk mengakses sistem
+- Footer
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Untuk tahap awal, seluruh data yang ditampilkan masih berupa data statis sebagai mockup UI.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Struktur Project
 
-## Laravel Sponsors
+Beberapa direktori dan file utama yang digunakan:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+```text
+lavogan-landing/
+├── app/
+├── bootstrap/
+├── config/
+├── database/
+├── public/
+├── resources/
+│   ├── css/
+│   │   └── app.css
+│   ├── js/
+│   │   └── app.js
+│   └── views/
+│       ├── layouts/
+│       │   └── app.blade.php
+│       └── home.blade.php
+├── routes/
+│   └── web.php
+├── .env
+├── composer.json
+├── package.json
+├── vite.config.js
+└── README.md
 
-### Premium Partners
+Blade Template
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+Project menggunakan Blade sebagai templating engine Laravel.
 
-## Contributing
+app.blade.php
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+File ini digunakan sebagai layout atau template utama halaman.
 
-## Code of Conduct
+Layout berisi struktur umum yang digunakan oleh halaman, seperti:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+HTML document structure
+Navigation
+CSS dan JavaScript
+Struktur dasar halaman
+Footer
+home.blade.php
 
-## Security Vulnerabilities
+File ini merupakan child view yang menggunakan app.blade.php sebagai layout.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Isi home.blade.php berfokus pada konten landing page seperti:
 
-## License
+Hero
+Tentang Sisfo Lavogan
+Fitur
+Statistik
+Program
+Call to Action
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Dengan konsep Blade inheritance, bagian yang bersifat umum dapat ditempatkan di layout, sedangkan konten spesifik halaman ditempatkan di child view.
+
+Routing
+
+Routing halaman utama didefinisikan pada:
+
+routes/web.php
+
+Route utama saat ini:
+
+Route::get('/', function () {
+    return view('home');
+});
+
+Route tersebut akan menampilkan home.blade.php ketika pengguna mengakses halaman utama aplikasi.
+
+Frontend Assets
+
+Asset frontend dikelola menggunakan Vite.
+
+File utama:
+
+resources/css/app.css
+resources/js/app.js
+
+CSS digunakan untuk mengatur tampilan dan responsive layout, sedangkan JavaScript digunakan untuk kebutuhan interaksi pada sisi frontend.
+
+Vite digunakan untuk memproses dan menyediakan asset frontend selama proses development.
+
+Requirements
+
+Sebelum menjalankan project, pastikan perangkat sudah memiliki:
+
+PHP 8.3 atau lebih baru
+Composer
+Node.js
+NPM
+
+Cek versi dengan:
+
+php --version
+composer --version
+node --version
+npm --version
+Installation
+1. Clone Repository
+
+Clone repository ke komputer:
+
+git clone https://github.com/hafizsyawaldi/lavogan-landing.git
+
+Masuk ke direktori project:
+
+cd lavogan-landing
+2. Install PHP Dependencies
+
+Install dependency Laravel menggunakan Composer:
+
+composer install
+
+Perintah ini akan membaca composer.json dan meng-install dependency yang dibutuhkan ke dalam folder vendor/.
+
+3. Setup Environment
+
+Buat file .env berdasarkan .env.example:
+
+cp .env.example .env
+
+Generate application key:
+
+php artisan key:generate
+4. Install Frontend Dependencies
+
+Install dependency frontend:
+
+npm install
+
+Perintah ini akan membuat folder node_modules/ berdasarkan dependency yang tercantum pada package.json.
+
+5. Jalankan Development Server
+
+Jalankan Laravel:
+
+php artisan serve
+
+Secara default aplikasi dapat diakses melalui:
+
+http://127.0.0.1:8000
+
+Untuk development frontend, jalankan Vite pada terminal lain:
+
+npm run dev
+Development Workflow
+
+Saat melakukan development, biasanya diperlukan dua terminal.
+
+Terminal 1 — Laravel
+php artisan serve
+Terminal 2 — Vite
+npm run dev
+
+Laravel digunakan untuk menjalankan aplikasi backend dan routing, sedangkan Vite digunakan untuk memproses asset frontend seperti CSS dan JavaScript.
+
+Database
+
+Pada tahap pengembangan UI saat ini, landing page belum melakukan integrasi dengan database untuk mengambil data dinamis.
+
+Database dan integrasi data akan dikembangkan pada tahap berikutnya sesuai kebutuhan sistem.
+
+API Integration
+
+Landing page saat ini masih menggunakan data statis untuk kebutuhan desain dan validasi UI.
+
+Integrasi API belum diterapkan pada tahap ini.
+
+Tahap selanjutnya dapat mencakup:
+
+Pengambilan data statistik dari API
+Pengambilan informasi program
+Pengambilan data berita
+Integrasi dengan sistem utama Sisfo Lavogan
+Responsive Design
+
+Landing page dirancang agar dapat digunakan pada berbagai ukuran layar, termasuk:
+
+Desktop
+Tablet
+Mobile
+
+Responsive layout diterapkan menggunakan CSS dan media queries.
+
+Project Status
+
+Project saat ini berada pada tahap:
+
+UI / Frontend Development
+
+Fokus pengembangan:
+
+ Setup Laravel
+ Setup Blade
+ Setup routing
+ Setup Vite
+ Landing page layout
+ Responsive navigation
+ Hero section
+ Informasi Sisfo Lavogan
+ Fitur utama
+ Statistik
+ Program
+ Call to Action
+ Footer
+ Integrasi API
+ Integrasi database
+ Data dinamis
+ Integrasi dengan sistem utama
